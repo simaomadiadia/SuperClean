@@ -8,28 +8,17 @@ namespace SuperClean
 {
     internal class Residencia
     {
-        private int idResidencia;
-        private string username;
-        public List<Piso> pisos = new List<Piso>() ;
+        public string name;
+        public DateTime lastUpdated;
+        public List<Piso> pisos;
 
 
-        public void setIdResidencia(int idResidencia)
+        public Residencia(string name) 
         {
-            this.idResidencia = idResidencia;
-        }
-
-        public int getIdResidencia() {
-            return this.idResidencia;
-        }
-
-        public void setUsername(string username)
-        {
-            this.username = username;
-        }
-
-        public string getUsername()
-        {
-            return this.username;
+            this.name = name;
+            this.lastUpdated = DateTime.Now;
+            this.pisos = new List<Piso>() ;
+        
         }
 
         public void addPiso(Piso piso)
@@ -39,7 +28,7 @@ namespace SuperClean
        
 
         //metodo que permite mostra usuario de uma residencia e os seus respeitivos pisos e divisoes
-        public void mostrarResidencia()
+       /* public void mostrarResidencia()
         {
             Console.WriteLine("Home");
             Console.WriteLine("Username " + this.username);
@@ -60,7 +49,7 @@ namespace SuperClean
 
 
 
-        }
+        }*/
 
     }
 }
