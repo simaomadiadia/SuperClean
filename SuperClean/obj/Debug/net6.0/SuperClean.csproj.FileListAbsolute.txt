@@ -1,0 +1,15 @@
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\bin\Debug\net6.0\SuperClean.exe
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\bin\Debug\net6.0\SuperClean.deps.json
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\bin\Debug\net6.0\SuperClean.runtimeconfig.json
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\bin\Debug\net6.0\SuperClean.dll
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\bin\Debug\net6.0\SuperClean.pdb
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\obj\Debug\net6.0\SuperClean.csproj.AssemblyReference.cache
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\obj\Debug\net6.0\SuperClean.GeneratedMSBuildEditorConfig.editorconfig
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\obj\Debug\net6.0\SuperClean.AssemblyInfoInputs.cache
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\obj\Debug\net6.0\SuperClean.AssemblyInfo.cs
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\obj\Debug\net6.0\SuperClean.csproj.CoreCompileInputs.cache
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\obj\Debug\net6.0\SuperClean.dll
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\obj\Debug\net6.0\refint\SuperClean.dll
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\obj\Debug\net6.0\SuperClean.pdb
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\obj\Debug\net6.0\SuperClean.genruntimeconfig.cache
+D:\SUPERPROF\Elson\PROJECTO\SuperClean\SuperClean\obj\Debug\net6.0\ref\SuperClean.dll
