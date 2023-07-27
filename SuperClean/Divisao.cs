@@ -72,35 +72,5 @@ namespace SuperClean
 
             return tempoProximaLimpesa >= 0 ? tempoProximaLimpesa : 0; // retorna o tempo restante para a proxima limpesa ou (0) se ja passou o interv.
         }
-
-        public void setName(string name) {
-            this.name= name;
-        }
-        public string getName() { 
-            return this.name; 
-        }
-
-        public void setCleanTime(int cleanTime)
-        {
-            this.cleanTime= cleanTime;
-
-        }
-        public int getCleanTime()
-        {
-            return this.cleanTime;
-        }
-
-        public void setCleanInterval(int cleanInterval) {
-            this.cleanInterval= cleanInterval;
-        }
-
-        public int getCleanInterval()
-        {
-            return this.cleanInterval;
-        }
-
-
-
-      
     }
 }
