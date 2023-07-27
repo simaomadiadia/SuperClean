@@ -8,11 +8,12 @@ namespace SuperClean
 {
     internal class Divisao
     {
-        private string idDivisao;
-        private string name;
-        private int cleanTime;
-        private int cleanInterval;
+        public string idDivisao;
+        public string name;
+        public int cleanTime;
+        public int cleanInterval;
         private DateTime? lastCleanDate;
+
 
         public Divisao()
         {
