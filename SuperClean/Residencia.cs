@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,9 +22,16 @@ namespace SuperClean
         
         }
 
-        public void addPiso(Piso piso)
+        // metedo para adicionar um novo piso a residência
+        public void AdicionarPiso(string nomePiso) 
         {
-            pisos.Add(piso);
+            Piso piso = pisos.Find(p => p.getName() == nomePiso);
+            if (piso != null) { throw new ArgumentException("piso já existente na residência"); }
+
+
+            pisos.Add(new Piso(nomePiso));
+            lastUpdated = DateTime.Now;
+
         }
        
 
