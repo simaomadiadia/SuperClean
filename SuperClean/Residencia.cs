@@ -59,5 +59,16 @@ namespace SuperClean
             lastUpdated = DateTime.Now;
         }
 
+        // método para editar uma divisão existente no piso
+        public void EditarDivisao(string nomePiso, string nomeDivisaoAntigo, string nomeDivisaoNovo, int cleanTime, int cleanIntervalo) 
+        {
+            Piso piso = this.pisos.Find(p => p.getName() == nomePiso);
+            if (piso == null) { throw new ArgumentException("Piso não encontrado na Residência"); }
+            piso.editarDivisao(nomeDivisaoAntigo, nomeDivisaoNovo, cleanTime, cleanIntervalo);
+            lastUpdated = DateTime.Now;
+
+
+        }
+
     }
 }
