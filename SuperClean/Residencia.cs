@@ -58,27 +58,6 @@ namespace SuperClean
             piso.AdicionarDivisao(nomeDivisao, cleanTime, cleanInterval);
             lastUpdated = DateTime.Now;
         }
-       
-
-        //metodo que permite mostra usuario de uma residencia e os seus respeitivos pisos e divisoes
-       /* public void mostrarResidencia()
-        {
-            Console.WriteLine("Home");
-            Console.WriteLine("Username " + this.username);
-
-            Console.WriteLine("{");
-            foreach (var piso in pisos)
-            {
-                Console.Write(
-                    $" {piso.getName()} \n"
-                    );
-                foreach (var divisao in piso.divisoes)
-                {
-                    Console.WriteLine("    -"+divisao.getName());
-                }
-            }
-            Console.WriteLine("}\n \n");
-        }*/
 
     }
 }
