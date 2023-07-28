@@ -9,9 +9,9 @@ namespace SuperClean
 {
     internal class Residencia
     {
-        public string name;
-        public DateTime lastUpdated;
-        public List<Piso> pisos;
+        private string name;
+        private DateTime lastUpdated;
+        private List<Piso> pisos;
 
         public Residencia(string name) 
         {
@@ -75,5 +75,23 @@ namespace SuperClean
             piso.ApagarDivisao(nomeDivisao);
             lastUpdated= DateTime.Now;
         }
+
+        public void setName(string name) 
+        { 
+            this.name = name;
+        }
+
+        public string getName() { return this.name; }
+
+        public void setLastUpdated(DateTime lastUpdate) 
+        {
+            this.lastUpdated = lastUpdate; 
+        }
+        
+        public void setPisos(List<Piso> pisos) 
+        { 
+            this.pisos = pisos;
+        }
+        public List<Piso> getPisos() {  return pisos; }
     }
 }
