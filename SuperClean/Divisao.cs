@@ -14,15 +14,9 @@ namespace SuperClean
         public int cleanInterval;
         private DateTime? lastCleanDate;
 
-
-        public Divisao()
-        {
-            Console.WriteLine("Foi criado um compartimento .");
-        }
-
         public Divisao(string name, int cleanTime,int cleanInterval)
         {
-            this.idDivisao = Guid.NewGuid().ToString();
+            this.idDivisao = Guid.NewGuid().ToString(); // Guid serve para um id único, e não repetido permito que o id divisão seja único. 
             this.name = name;
             this.cleanTime = cleanTime;
             this.cleanInterval = cleanInterval;
@@ -30,29 +24,23 @@ namespace SuperClean
         }
 
          // metodo para marcar uma limpesa na divisao
-
         public void MarcarLimpesa() 
         { 
          this.lastCleanDate = DateTime.Now;
-        
         }
 
         // metodo para remover a marcação da divisão
-
         public void RemoverLimpesa() 
         {
             this.lastCleanDate = null;
-        
         }
 
         // metodo para verificar se a divisão esta suja
-
         public bool EstaSuja() 
         {
             if(this.lastCleanDate == null) { return true; } // se ainda nao foi limpa esta suja
 
             DateTime dataAtual = DateTime.Now;
-            
             int diasDesdeUltimaLimpesa = (int)dataAtual.Subtract(this.lastCleanDate.Value).TotalDays;
 
             if(diasDesdeUltimaLimpesa >= this.cleanInterval) { return true;} // se ja passou o intervalo de limpesa esta suja
@@ -60,18 +48,16 @@ namespace SuperClean
             return false;  // caso contrario esta limpa
         }
 
-        // metodo para obter o tempo esperado ate a próxima limpesa
-
-        public int ObterTempoProximaLimpesa() 
+        // metodo para obter o tempo esperado ate a próxima limpeza
+        public int ObterTempoProximaLimpeza() 
         { 
             if (this.lastCleanDate == null) { return this.cleanInterval; } // se ainda não limpa o tempo esperado é o intervalo de limpesa
 
             DateTime dataAtual = DateTime.Now;
-            int diasDesdeUltimaLimpesa = (int)dataAtual.Subtract(this.lastCleanDate.Value).TotalDays;
+            int diasDesdeUltimaLimpeza = (int)dataAtual.Subtract(this.lastCleanDate.Value).TotalDays;
+            int tempoProximaLimpeza = this.cleanInterval - diasDesdeUltimaLimpeza;
 
-            int tempoProximaLimpesa = this.cleanInterval - diasDesdeUltimaLimpesa;
-
-            return tempoProximaLimpesa >= 0 ? tempoProximaLimpesa : 0; // retorna o tempo restante para a proxima limpesa ou (0) se ja passou o interv.
+            return tempoProximaLimpeza >= 0 ? tempoProximaLimpeza : 0; // retorna o tempo restante para a proxima limpeza ou (0) se ja passou o interv.
         }
     }
 }

@@ -36,8 +36,8 @@ namespace SuperClean
             divisao.cleanInterval = cleanIntervalo;
         }
 
-        // metodo para apagar divisões existentes
-        public void ApagarDivisoe(string nomeDivisao) 
+        // metodo para apagar uma divisao existentes no piso
+        public void ApagarDivisao(string nomeDivisao) 
         {
             Divisao divisao = this.divisoes.Find(d=> d.name == nomeDivisao);
             if(divisao != null) { throw new ArgumentException("Divisão não encontrada no piso"); }
