@@ -8,15 +8,15 @@ namespace SuperClean
 {
     internal class Divisao
     {
-        public string idDivisao;
-        public string name;
-        public int cleanTime;
-        public int cleanInterval;
+        private string idDivisao;
+        private string name;
+        private int cleanTime;
+        private int cleanInterval;
         private DateTime? lastCleanDate;
 
         public Divisao(string name, int cleanTime,int cleanInterval)
         {
-            this.idDivisao = Guid.NewGuid().ToString(); // Guid serve para um id único, e não repetido permito que o id divisão seja único. 
+            idDivisao = Guid.NewGuid().ToString(); // Guid serve para um id único, e não repetido permito que o id divisão seja único. 
             this.name = name;
             this.cleanTime = cleanTime;
             this.cleanInterval = cleanInterval;
@@ -59,5 +59,34 @@ namespace SuperClean
 
             return tempoProximaLimpeza >= 0 ? tempoProximaLimpeza : 0; // retorna o tempo restante para a proxima limpeza ou (0) se ja passou o interv.
         }
+
+        public void setName(string name) 
+        { 
+            this.name = name;
+        }
+
+        public string getName() { return this.name;}
+
+        public string getIdDivisao() { return idDivisao;}
+
+        public void setCleanTime(int cleanTime) 
+        {
+            this.cleanTime = cleanTime;
+        }
+        
+        public int getCleanTime() { return cleanTime; }
+
+        public void setInterval(int interval) 
+        {
+            this.cleanInterval= interval;
+        }
+
+        public int getCleanInterval() {  return cleanInterval; }
+
+        public void setLastCleanDate(DateTime lastCleanDate) 
+        {
+        this.lastCleanDate = lastCleanDate;
+        }
     }
+
 }
