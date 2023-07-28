@@ -53,10 +53,6 @@ namespace SuperClean
                 }
             }
             Console.WriteLine("}\n \n");
-
-
-
-
         }*/
 
     }
