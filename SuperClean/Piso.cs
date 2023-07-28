@@ -20,15 +20,15 @@ namespace SuperClean
         // metodo para adicionar uma nova divisão ao piso
         public void AdicionarDivisao(string nomeDivisao, int cleanTime, int cleanIntervalo) 
         {
-            Divisao divisao = this.divisoes.Find(d => d.name == nomeDivisao);
+            Divisao divisao = divisoes.Find(d => d.name == nomeDivisao);
             if (divisao != null) { throw new ArgumentException("Divisão já existente no piso"); }
-            this.divisoes.Add(new Divisao(nomeDivisao,cleanTime, cleanIntervalo));
+            divisoes.Add(new Divisao(nomeDivisao,cleanTime, cleanIntervalo));
         }
 
         // metodo para editar uma divisão existente no piso 
         public void editarDivisao(string nomeDivisaoAntigo, string nomeDivisaoNovo, int cleanTime, int cleanIntervalo) 
         {
-            Divisao divisao = this.divisoes.Find(d => d.name == nomeDivisaoAntigo);
+            Divisao divisao = divisoes.Find(d => d.name == nomeDivisaoAntigo);
             if (divisao == null) { throw new ArgumentException("Divisão não encontrada no piso"); }
 
             divisao.name = nomeDivisaoNovo;
@@ -39,15 +39,11 @@ namespace SuperClean
         // metodo para apagar uma divisao existentes no piso
         public void ApagarDivisao(string nomeDivisao) 
         {
-            Divisao divisao = this.divisoes.Find(d=> d.name == nomeDivisao);
+            Divisao divisao = divisoes.Find(d=> d.name == nomeDivisao);
             if(divisao != null) { throw new ArgumentException("Divisão não encontrada no piso"); }
-            this.divisoes.Remove(divisao);
-        
+            divisoes.Remove(divisao);
         }
-       
-        
-
-
+  
         public void setName(string name)
         {
             this.name = name;
@@ -57,22 +53,5 @@ namespace SuperClean
         {
             return this.name;
         }
-         
-
-        // metodo que permite mostrar nome do piso e os seus compartimentos ou divisoes
-        /*public void MostrarPiso()
-        {
-            Console.WriteLine(this.name);
-            Console.WriteLine("{");
-            foreach (var divisao in divisoes)
-            {
-                Console.Write(
-                    $"  Name          :{divisao.getName()} \n" +
-                    $"  CleanTime     :{divisao.getCleanTime()}\n" +
-                    $"  CleanInterval :{divisao.getCleanInterval()} \n \n"
-                    );
-            }
-            Console.WriteLine("}\n \n");
-        }*/
     }
 }
