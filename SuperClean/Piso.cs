@@ -9,7 +9,7 @@ namespace SuperClean
     internal class Piso
     {
         private string name;
-        public List<Divisao> divisoes;
+        private List<Divisao> divisoes;
 
         public Piso(string name) 
         {
@@ -20,7 +20,7 @@ namespace SuperClean
         // metodo para adicionar uma nova divisão ao piso
         public void AdicionarDivisao(string nomeDivisao, int cleanTime, int cleanIntervalo) 
         {
-            Divisao divisao = divisoes.Find(d => d.name == nomeDivisao);
+            Divisao divisao = divisoes.Find(d => d.getName() == nomeDivisao);
             if (divisao != null) { throw new ArgumentException("Divisão já existente no piso"); }
             divisoes.Add(new Divisao(nomeDivisao,cleanTime, cleanIntervalo));
         }
@@ -28,18 +28,18 @@ namespace SuperClean
         // metodo para editar uma divisão existente no piso 
         public void editarDivisao(string nomeDivisaoAntigo, string nomeDivisaoNovo, int cleanTime, int cleanIntervalo) 
         {
-            Divisao divisao = divisoes.Find(d => d.name == nomeDivisaoAntigo);
+            Divisao divisao = divisoes.Find(d => d.getName() == nomeDivisaoAntigo);
             if (divisao == null) { throw new ArgumentException("Divisão não encontrada no piso"); }
 
-            divisao.name = nomeDivisaoNovo;
-            divisao.cleanTime = cleanTime;
-            divisao.cleanInterval = cleanIntervalo;
+            divisao.setName(nomeDivisaoNovo);
+            divisao.setCleanTime(cleanTime);
+            divisao.setCleanInterval(cleanIntervalo);
         }
 
         // metodo para apagar uma divisao existentes no piso
         public void ApagarDivisao(string nomeDivisao) 
         {
-            Divisao divisao = divisoes.Find(d=> d.name == nomeDivisao);
+            Divisao divisao = divisoes.Find(d=> d.getName() == nomeDivisao);
             if(divisao != null) { throw new ArgumentException("Divisão não encontrada no piso"); }
             divisoes.Remove(divisao);
         }
@@ -53,5 +53,12 @@ namespace SuperClean
         {
             return this.name;
         }
+
+        public void setDivisoes(List<Divisao> divisoes)
+        {
+        this.divisoes = divisoes;
+        }
+
+        public List<Divisao> getDivisoes() { return this.divisoes; }
     }
 }

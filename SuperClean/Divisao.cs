@@ -76,7 +76,7 @@ namespace SuperClean
         
         public int getCleanTime() { return cleanTime; }
 
-        public void setInterval(int interval) 
+        public void setCleanInterval(int interval) 
         {
             this.cleanInterval= interval;
         }
