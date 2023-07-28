@@ -40,6 +40,15 @@ namespace SuperClean
             piso.setName(nomePisoNovo);
             lastUpdated = DateTime.Now;
         }
+
+        // método para apagar um piso na residência 
+        public void ApagarPiso(string nomePiso) 
+        {
+            Piso piso = this.pisos.Find(p => p.getName() == nomePiso);
+            if (piso == null) { throw new ArgumentException("Piso não encontrado na Residência"); }
+            this.pisos.Remove(piso);
+            lastUpdated = DateTime.Now;
+        }
        
 
         //metodo que permite mostra usuario de uma residencia e os seus respeitivos pisos e divisoes
