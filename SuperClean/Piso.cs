@@ -58,15 +58,6 @@ namespace SuperClean
             return this.name;
         }
          
-        public void addDivisao( Divisao divisao)
-        {
-            divisoes.Add(divisao);
-        }
-
-        public void removerDivisao(Divisao divisao)
-        {
-           
-        }
 
         // metodo que permite mostrar nome do piso e os seus compartimentos ou divisoes
         /*public void MostrarPiso()

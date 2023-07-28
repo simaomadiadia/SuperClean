@@ -49,6 +49,15 @@ namespace SuperClean
             this.pisos.Remove(piso);
             lastUpdated = DateTime.Now;
         }
+
+        // Método Para adicionar uma nova divisão ao piso 
+        public void AdicionarDivisao(string nomePiso, string nomeDivisao, int cleanTime, int cleanInterval) 
+        {
+            Piso piso = this.pisos.Find(p => p.getName() == nomePiso);
+            if (piso == null) { throw new ArgumentException("Piso não encontrado na Residência"); }
+            piso.AdicionarDivisao(nomeDivisao, cleanTime, cleanInterval);
+            lastUpdated = DateTime.Now;
+        }
        
 
         //metodo que permite mostra usuario de uma residencia e os seus respeitivos pisos e divisoes
