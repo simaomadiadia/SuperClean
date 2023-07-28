@@ -19,7 +19,6 @@ namespace SuperClean
             this.name = name;
             this.lastUpdated = DateTime.Now;
             this.pisos = new List<Piso>() ;
-        
         }
 
         // metedo para adicionar um novo piso a residência
@@ -28,10 +27,18 @@ namespace SuperClean
             Piso piso = pisos.Find(p => p.getName() == nomePiso);
             if (piso != null) { throw new ArgumentException("piso já existente na residência"); }
 
-
             pisos.Add(new Piso(nomePiso));
             lastUpdated = DateTime.Now;
+        }
 
+        // método para editar o nome de um piso existente
+        public void EditarNomePiso(string nomePisoAntigo, string nomePisoNovo) 
+        {
+            Piso piso = this.pisos.Find(p => p.getName() == nomePisoAntigo);
+            if (piso == null) { throw new ArgumentException("Piso não encontrado na residência"); }
+
+            piso.setName(nomePisoNovo);
+            lastUpdated = DateTime.Now;
         }
        
 
