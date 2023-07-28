@@ -66,8 +66,15 @@ namespace SuperClean
             if (piso == null) { throw new ArgumentException("Piso não encontrado na Residência"); }
             piso.editarDivisao(nomeDivisaoAntigo, nomeDivisaoNovo, cleanTime, cleanIntervalo);
             lastUpdated = DateTime.Now;
+        }
 
-
+        // metodo para apagar uma divisao num piso
+        public void ApagarDivisao(string nomePiso, string nomeDivisao) 
+        {
+            Piso piso = this.pisos.Find(p=> p.getName() == nomePiso);
+            if (piso == null) { throw new ArgumentException("piso não encontrado na Residência"); }
+            piso.ApagarDivisao(nomeDivisao);
+            lastUpdated= DateTime.Now;
         }
 
     }

@@ -37,7 +37,7 @@ namespace SuperClean
         }
 
         // metodo para apagar divisões existentes
-        public void ApagarDivisoes(string nomeDivisao) 
+        public void ApagarDivisoe(string nomeDivisao) 
         {
             Divisao divisao = this.divisoes.Find(d=> d.name == nomeDivisao);
             if(divisao != null) { throw new ArgumentException("Divisão não encontrada no piso"); }
