@@ -16,8 +16,8 @@ namespace SuperClean
         public Residencia(string name) 
         {
             this.name = name;
-            this.lastUpdated = DateTime.Now;
-            this.pisos = new List<Piso>() ;
+            lastUpdated = DateTime.Now;
+            pisos = new List<Piso>() ;
         }
 
         // metedo para adicionar um novo piso a residência
