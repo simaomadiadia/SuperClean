@@ -76,6 +76,15 @@ namespace SuperClean
             lastUpdated= DateTime.Now;
         }
 
+        // Método para marcar a limpeza de uma divisao num piso da residência
+        public void MarcarLimpeza(string nomePiso, string nomeDivisao) 
+        {
+            Piso piso = pisos.Find(p=> p.getName() ==nomePiso);
+            if(piso == null) { throw new ArgumentException("Piso não encontrado na Residência"); }
+            piso.MarcarLimpeza(nomeDivisao);
+            lastUpdated= DateTime.Now;
+        }
+
         public void setName(string name) 
         { 
             this.name = name;

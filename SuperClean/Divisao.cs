@@ -23,14 +23,14 @@ namespace SuperClean
             this.lastCleanDate = null;
         }
 
-         // metodo para marcar uma limpesa na divisao
-        public void MarcarLimpesa() 
+         // metodo para marcar uma limpeza na divisao
+        public void MarcarLimpeza() 
         { 
          this.lastCleanDate = DateTime.Now;
         }
 
         // metodo para remover a marcação da divisão
-        public void RemoverLimpesa() 
+        public void RemoverLimpeza() 
         {
             this.lastCleanDate = null;
         }
@@ -41,9 +41,9 @@ namespace SuperClean
             if(this.lastCleanDate == null) { return true; } // se ainda nao foi limpa esta suja
 
             DateTime dataAtual = DateTime.Now;
-            int diasDesdeUltimaLimpesa = (int)dataAtual.Subtract(this.lastCleanDate.Value).TotalDays;
+            int diasDesdeUltimaLimpeza = (int)dataAtual.Subtract(this.lastCleanDate.Value).TotalDays;
 
-            if(diasDesdeUltimaLimpesa >= this.cleanInterval) { return true;} // se ja passou o intervalo de limpesa esta suja
+            if(diasDesdeUltimaLimpeza >= this.cleanInterval) { return true;} // se ja passou o intervalo de limpeza esta suja
             
             return false;  // caso contrario esta limpa
         }
@@ -51,7 +51,7 @@ namespace SuperClean
         // metodo para obter o tempo esperado ate a próxima limpeza
         public int ObterTempoProximaLimpeza() 
         { 
-            if (this.lastCleanDate == null) { return this.cleanInterval; } // se ainda não limpa o tempo esperado é o intervalo de limpesa
+            if (this.lastCleanDate == null) { return this.cleanInterval; } // se ainda não limpa o tempo esperado é o intervalo de limpeza
 
             DateTime dataAtual = DateTime.Now;
             int diasDesdeUltimaLimpeza = (int)dataAtual.Subtract(this.lastCleanDate.Value).TotalDays;

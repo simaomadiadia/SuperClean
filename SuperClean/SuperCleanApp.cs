@@ -58,6 +58,55 @@ namespace SuperClean
             usersHomes[nomeUtilizador].EditarNomePiso(nomePisoAntigo, nomePisoNovo);
         }
 
+        // Método para apagar um piso existente na residência do utilizador
+        public void ApagarPiso(string nomeUtilizador, string nomePiso) 
+        {
+            if (!usersHomes.ContainsKey(nomeUtilizador)) 
+            {
+                throw new ArgumentException("Utilizador não encontrado");
+            }
+            usersHomes[nomeUtilizador].ApagarPiso(nomePiso);
+        }
+
+        // Metodo para adicionar uma nova divisão a um piso na residência do utilizador
+        public void AdicionarDivisão(string nomeUtilizador, string nomePiso, string nomeDivisao, int cleanTime, int cleanInterval) 
+        {
+            if (!usersHomes.ContainsKey(nomeUtilizador)) 
+            {
+                throw new ArgumentException("Utilizador não encontrado");
+            }
+            usersHomes[nomeUtilizador].AdicionarDivisao(nomePiso,nomeDivisao, cleanTime, cleanInterval);
+        }
+
+        // Metodo para editar uma divisão existente no piso na residência do utilizador
+        public void EditarDivisao(string nomeUtilizador, string nomePiso, string nomeDivisaoNovo, string nomeDivisaoAntigo, int cleanTime, int cleanInterval) 
+        {
+            if (!usersHomes.ContainsKey(nomeUtilizador)) 
+            {
+                throw new ArgumentException("Utilizador não encontrado");
+            }
+            usersHomes[nomeUtilizador].EditarDivisao(nomePiso, nomeDivisaoNovo, nomeDivisaoAntigo, cleanTime, cleanInterval);
+        }
+
+        // Metodo para apagar uma divisão num piso na residencia do Utilizador
+        public void ApagarDivisao(string nomeUtilizador, string nomePiso, string nomeDivisao) 
+        {
+            if (!usersHomes.ContainsKey(nomeUtilizador)) 
+            {
+                throw new ArgumentException("Utilizar não encontrado");
+            }
+            usersHomes[nomeUtilizador].ApagarDivisao(nomePiso,nomeDivisao);
+        }
+
+        // Metodo para marcar a limpeza de uma divisão no piso na Residência do Utilizador
+        public void MarcarLimpeza(string nomeUtilizador, string nomePiso, string nomeDivisao) 
+        {
+            if (!usersHomes.ContainsKey(nomeUtilizador)) 
+            {
+                throw new ArgumentException("Utilizador não encontrado");
+            }
+            usersHomes[nomeUtilizador].MarcarLimpeza(nomePiso, nomeDivisao);
+        }
 
     }
 } 
