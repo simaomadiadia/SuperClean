@@ -85,6 +85,32 @@ namespace SuperClean
             lastUpdated= DateTime.Now;
         }
 
+        //Método para Remover a marcação de Limpeza de uma divisão num piso da Residencia
+        public void RemoverLimpeza(string nomePiso, string nomeDivisao)
+        {
+            Piso piso = pisos.Find(p=> p.getName() == nomePiso); 
+            if(piso == null) { throw new ArgumentException("Piso não encontrado na Residência"); }
+            piso.RemoverLimpeza(nomeDivisao); 
+            lastUpdated= DateTime.Now;
+        }
+
+        // Método para visualizar a arvore divisões da residência
+        public string VisualizarArvoreDivisoes()
+        {
+            if (pisos.Count == 0)
+            {
+                return "Não existe Pisos na Residência";
+            }
+
+            string arvore = $"Residência de {name}:\n";
+            foreach(Piso piso in pisos)
+            {
+                arvore += piso.VisualizarArvoreDivisoes(1); //começar com o nivel 1 de identação
+            }
+
+            return arvore;
+        }
+
         public void setName(string name) 
         { 
             this.name = name;

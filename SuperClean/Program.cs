@@ -1,6 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using SuperClean;
 
+class Program 
+{
+
+ 
+    
+    static void Main() 
+    {
+    
+    }
+}
 
 // criacao de um Piso
 //Piso p0 = new Piso();
