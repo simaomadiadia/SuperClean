@@ -108,5 +108,25 @@ namespace SuperClean
             usersHomes[nomeUtilizador].MarcarLimpeza(nomePiso, nomeDivisao);
         }
 
+        // Metodo para remover a marcação de Limpeza de uma divisão num piso na residencia do utlização
+        public void RemoverLimpeza(string nomeUtilizador, string nomeDivisao, string nomePiso) 
+        {
+            if (!usersHomes.ContainsKey(nomeUtilizador))
+            {
+                throw new ArgumentException("Utilizador não encontrado");
+            }
+            usersHomes[nomeUtilizador].RemoverLimpeza(nomeDivisao, nomePiso);
+        }
+
+        // Método para visualizar a arvore da divisões de um piso da residencia do utilizador
+        public string VisualizarArvoreDivisoes(string nomeUtilizador)
+        {
+            if (!usersHomes.ContainsKey(nomeUtilizador))
+            {
+                throw new ArgumentException("Utilizador não encontrado");
+            }
+            return usersHomes[nomeUtilizador].VisualizarArvoreDivisoes();
+        }
+
     }
 } 
