@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace SuperClean
@@ -126,6 +127,40 @@ namespace SuperClean
                 throw new ArgumentException("Utilizador não encontrado");
             }
             return usersHomes[nomeUtilizador].VisualizarArvoreDivisoes();
+        }
+
+        // Método para pressistir os dados em ficheiro json 
+        public void GuardarDadosEmFicheiroJson(string nomeFicheiro)
+        {
+            try
+            {
+                string jsonString = JsonSerializer.Serialize(usersHomes);
+                File.WriteAllText(nomeFicheiro, jsonString);
+                Console.WriteLine("Dados guardados com sucesso");
+
+            } catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao gravar os dados: {ex.Message}");
+            }
+        }
+
+        // Método para carregar os dados do Ficheiro Json
+        public void CarregarDadosDoFicheiroJson(string nomeFicheiro) 
+        {
+            try
+            {
+                if (File.Exists(nomeFicheiro))
+                {
+                    string jsonString = File.ReadAllText(nomeFicheiro);
+                    usersHomes = JsonSerializer.Deserialize<Dictionary<string, Residencia>>(jsonString);
+                    Console.WriteLine("Dados Carregados com Sucesso");
+                }
+                else { Console.WriteLine("Ficheiro de Dados Ñão encontrado. Sera criado um Ficheiro novo"); }
+
+            } catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao gravar os Dados:{ex.Message}");
+            }
         }
 
     }
