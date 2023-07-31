@@ -33,6 +33,42 @@ class Program
                 Console.WriteLine("\n0. Sair");
                 Console.WriteLine("Opção: ");
                 string opcao = Console.ReadLine();
+
+                switch (opcao) 
+                {
+                    case "1":
+                        Console.WriteLine("Nome do Piso Adicionar: ");
+                        string nomePiso = Console.ReadLine();
+                        app.AdicionarPiso(nomeUtilizador, nomePiso);
+                        Console.WriteLine($"Piso '{nomePiso}' adicionado com sucesso!");
+
+                        break;
+                    case "2":
+                        Console.WriteLine("Nome do piso aonde adicionar divisão: ");
+                        string nomePiso1 = Console.ReadLine();
+                        Console.WriteLine("Nome da divisão adicionar: ");
+                        string nomeDivisao = Console.ReadLine();
+                        Console.WriteLine("Tempo da Limpeza da divisão (Em minutos): ");
+                        int cleanTime = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Intervalo de Limpeza da Divisão (Em dias): ");
+                        int cleanInterval = int.Parse(Console.ReadLine());
+                        app.AdicionarDivisao(nomeUtilizador, nomePiso1, nomeDivisao, cleanTime, cleanInterval);
+                        Console.WriteLine($"Divisão '{nomeDivisao}' adicionada no piso '{nomePiso1}' com sucesso!");
+
+                        break;
+                    case "3":
+                        Console.WriteLine("Opção 3");
+                        break;
+                    case "4":
+                        Console.WriteLine("Opção 4");
+                        break;
+                    case "0":
+                        Console.WriteLine("Opcão 0");
+                        break;
+                    default:
+                        Console.WriteLine("Opção invalida. Por favor, tente novamente.");
+                        break;
+                }
             }
             
         }catch (Exception ex) { Console.WriteLine($"Erro: {ex.Message}"); }

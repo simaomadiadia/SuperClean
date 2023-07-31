@@ -76,7 +76,7 @@ namespace SuperClean
         }
 
         // Metodo para adicionar uma nova divisão a um piso na residência do utilizador
-        public void AdicionarDivisão(string nomeUtilizador, string nomePiso, string nomeDivisao, int cleanTime, int cleanInterval) 
+        public void AdicionarDivisao(string nomeUtilizador, string nomePiso, string nomeDivisao, int cleanTime, int cleanInterval) 
         {
             if (!usersHomes.ContainsKey(nomeUtilizador)) 
             {
@@ -161,7 +161,7 @@ namespace SuperClean
                     usersHomes = JsonSerializer.Deserialize<Dictionary<string, Residencia>>(jsonString);
                     Console.WriteLine("Dados Carregados com Sucesso");
                 }
-                else { Console.WriteLine("Ficheiro de Dados Ñão encontrado. Sera criado um Ficheiro novo"); }
+                else { Console.WriteLine("Ficheiro de Dados Não encontrado. Sera criado um Ficheiro novo"); }
 
             } catch (Exception ex)
             {
