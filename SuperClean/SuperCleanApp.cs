@@ -17,6 +17,12 @@ namespace SuperClean
             usersHomes = new Dictionary<string, Residencia>();
         }
 
+        // Metodo para verificar se o utilizador existe
+        public bool ExisteUtilizador(string nomeUtilizador)
+        {
+            return usersHomes.ContainsKey(nomeUtilizador);
+        }
+
         // metodo para criar um novo utilizador e a sua residência
         public void CriarUtlizador(string nomeUtilizador) 
         {

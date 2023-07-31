@@ -3,12 +3,39 @@ using SuperClean;
 
 class Program 
 {
-
- 
-    
     static void Main() 
     {
-    
+        SuperCleanApp app = new SuperCleanApp();
+
+        // carregar dados do ficheiro, se houver 
+        app.CarregarDadosDoFicheiroJson("dados.json");
+
+        Console.WriteLine("\n\nBenvindo ao Super Clean!\n\n");
+        Console.WriteLine("Digite o nome do Utilizador: ");
+        string nomeUtilizador = Console.ReadLine();
+
+        try
+        {
+            if(!app.ExisteUtilizador(nomeUtilizador)) 
+            { 
+                // se o Utilizador não existir, Cria um nome
+                app.CriarUtlizador(nomeUtilizador);
+            }
+
+            bool sair = false;
+            while (!sair)
+            {
+                Console.WriteLine("\n--------  Menu  --------");
+                Console.WriteLine("\n1. Adicionar Piso");
+                Console.WriteLine("\n2. Adicionar Divisão");
+                Console.WriteLine("\n3. Adicionar Limpeza");
+                Console.WriteLine("\n4. Visualizar Área de Divisões");
+                Console.WriteLine("\n0. Sair");
+                Console.WriteLine("Opção: ");
+                string opcao = Console.ReadLine();
+            }
+            
+        }catch (Exception ex) { Console.WriteLine($"Erro: {ex.Message}"); }
     }
 }
 
