@@ -57,7 +57,12 @@ class Program
 
                         break;
                     case "3":
-                        Console.WriteLine("Opção 3");
+                        Console.WriteLine("Nome do piso da divisão a limpar: ");
+                        string nomePiso2 = Console.ReadLine() ;
+                        Console.WriteLine("Nome da Divisão a limpar: ");
+                        string nomeDivisao2 = Console.ReadLine() ;
+                        app.MarcarLimpeza(nomeUtilizador, nomePiso2, nomeDivisao2);
+                        Console.WriteLine($"Limpeza da Divisão'{nomeDivisao2}' adicionada no piso '{nomePiso2}' marcada com sucesso!");
                         break;
                     case "4":
                         Console.WriteLine("Opção 4");
