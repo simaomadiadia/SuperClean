@@ -65,7 +65,9 @@ class Program
                         Console.WriteLine($"Limpeza da Divisão'{nomeDivisao2}' adicionada no piso '{nomePiso2}' marcada com sucesso!");
                         break;
                     case "4":
-                        Console.WriteLine("Opção 4");
+                        Console.WriteLine("\n--------  arvore de divisões --------");
+                        string arvoreDivisoes = app.VisualizarArvoreDivisoes(nomeUtilizador);
+                        Console.WriteLine(arvoreDivisoes);
                         break;
                     case "0":
                         Console.WriteLine("Opcão 0");
