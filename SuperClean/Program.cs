@@ -70,7 +70,9 @@ class Program
                         Console.WriteLine(arvoreDivisoes);
                         break;
                     case "0":
-                        Console.WriteLine("Opcão 0");
+                        Console.WriteLine("Guardando Operações");
+                        app.GuardarDadosEmFicheiroJson("dados.json");
+                        Console.WriteLine("obrigado por usar o Super Clean App! até breve");
                         break;
                     default:
                         Console.WriteLine("Opção invalida. Por favor, tente novamente.");

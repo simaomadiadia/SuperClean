@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -35,7 +36,7 @@ namespace SuperClean
         }
 
         // metodo para criar uma nova residência para utilizador
-        public void CriarResidência(string nomeUtlizador) 
+        public void CriarResidencia(string nomeUtlizador) 
         { 
             if (!usersHomes.ContainsKey(nomeUtlizador))
             {
@@ -43,6 +44,17 @@ namespace SuperClean
             }
 
             usersHomes[nomeUtlizador] = new Residencia(nomeUtlizador);
+        }
+
+        // metodo para obter toda residencia do utilizador
+        public List<string> GetResidencias(string nomeUtilizador) 
+        {
+            if (usersHomes.ContainsKey(nomeUtilizador)) 
+            {
+                Residencia residencia = usersHomes[nomeUtilizador];
+                return residencia.GetHomes();
+            }
+            else { return new List<string>(); }
         }
 
         // metodo para adicionar um novo piso a residência do ultilizador
@@ -140,7 +152,24 @@ namespace SuperClean
         {
             try
             {
+                // criação de object que contém os dados dos utilizadores
+                List<SerializableUser> serializableUsers = new List<SerializableUser>();
+                
+                // procorre todos os utilizadores para a Serialização
+                foreach(var userData in usersHomes) 
+                {
+                    string userName = userData.Key;
+                    Residencia userHome = userData.Value;
+                    
+                    // cria um objecto Serializable para o Utilizador contendo o seu nome e as suas casas
+                    SerializableUser serializableUser = new SerializableUser { UserName = userName, Residencia = new List<SerializableResidencia> ()};
+
+                    // precorre todas as casas do Utilizador para a Serialização
+                  //  foreach(var residencias in userHome.getho)
+                }
+
                 string jsonString = JsonSerializer.Serialize(usersHomes);
+                Console.WriteLine(jsonString);
                 File.WriteAllText(nomeFicheiro, jsonString);
                 Console.WriteLine("Dados guardados com sucesso");
 
@@ -170,4 +199,38 @@ namespace SuperClean
         }
 
     }
-} 
+}
+
+[Serializable]
+public class SerializableUser 
+{
+    public string UserName 
+    {
+        get; set;
+    }
+    public List<SerializableResidencia> Residencia { get; set; }
+}
+
+// class Sealizable para guardar os dados da casa 
+[Serializable]
+public class SerializableResidencia 
+{
+    public string Name { get; set; }
+    public List<SerializablePiso> pisos { get; set; }
+}
+// class sealizable para guardar os dados dos pisos
+[Serializable]
+public class SerializablePiso 
+{
+    public string Name { get; set; }
+    public List<SerializableDivisao> divisoes { get; set; }
+}
+
+// class Sealizable para guardar os dados da divisão
+[Serializable]
+public class SerializableDivisao 
+{ 
+    public string Name { get; set; }
+    public int CleanTime { get; set; } 
+    public int CleanInterval { get; set; }
+}
