@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SuperClean
 {
-    internal class Usuario
+    public class Usuario
     {
         private string username;
 

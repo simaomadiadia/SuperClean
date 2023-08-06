@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SuperClean
 {
-    internal class SuperCleanApp
+    public class SuperCleanApp
     {
 
         private Dictionary<string, Residencia> usersHomes;
@@ -47,7 +47,7 @@ namespace SuperClean
         }
 
         // metodo para obter toda residencia do utilizador
-        public List<string> GetResidencias(string nomeUtilizador) 
+        /*public List<string> GetResidencias(string nomeUtilizador) 
         {
             if (usersHomes.ContainsKey(nomeUtilizador)) 
             {
@@ -56,7 +56,7 @@ namespace SuperClean
             }
             else { return new List<string>(); }
         }
-
+        */
         // metodo para adicionar um novo piso a residência do ultilizador
         public void AdicionarPiso(string nomeUtlizador, string nomePiso) 
         { 
@@ -163,7 +163,19 @@ namespace SuperClean
                     
                     // cria um objecto Serializable para o Utilizador contendo o seu nome e as suas casas
                     SerializableUser serializableUser = new SerializableUser { UserName = userName, Residencia = new List<SerializableResidencia> ()};
+                    Console.WriteLine(serializableUser.Residencia);
+                    List<SerializablePiso> serializablePisos = new List<SerializablePiso>();
 
+                    foreach(var piso in userHome.GetResidencia().Pisos)
+                    {
+                        List<SerializableDivisao> serializableDivisaos = new List<SerializableDivisao>();
+
+                        foreach(var divisao in piso.getDivisoes()) 
+                        {
+                            Console.WriteLine(divisao);
+                        }
+
+                    }
                     // precorre todas as casas do Utilizador para a Serialização
                   //  foreach(var residencias in userHome.getho)
                 }

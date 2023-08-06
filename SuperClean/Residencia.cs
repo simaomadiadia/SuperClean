@@ -7,7 +7,17 @@ using System.Threading.Tasks;
 
 namespace SuperClean
 {
-    internal class Residencia
+    public class Home
+    {
+        public string  Name { get; private set; }
+        public List<Piso> Pisos { get; private set; }
+        public Home(string name, List<Piso> pisos)
+        {
+            Name = name;
+            Pisos = pisos;
+        }
+    }
+    public class Residencia
     {
         private string name;
         private DateTime lastUpdated;
@@ -19,6 +29,18 @@ namespace SuperClean
             lastUpdated = DateTime.Now;
             pisos = new List<Piso>() ;
         }
+
+        // Metodo para obter a residencia associada a um utilizador
+        public Home GetResidencia() 
+        {
+            return Home(name, pisos);
+        }
+
+        private Home Home(string name, List<Piso> pisos)
+        {
+            throw new NotImplementedException();
+        }
+
 
         // metedo para adicionar um novo piso a residência
         public void AdicionarPiso(string nomePiso) 

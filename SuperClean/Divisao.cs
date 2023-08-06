@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SuperClean
 {
-    internal class Divisao
+    public class Divisao
     {
         private string idDivisao;
         private string name;

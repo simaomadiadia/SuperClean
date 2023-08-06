@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SuperClean
 {
-    internal class Piso
+    public class Piso
     {
         private string name;
         private List<Divisao> divisoes;
